@@ -285,7 +285,7 @@
         
         $(".studios-toggle").click(function(){
             $(".studios").toggle();
-            $(".legend").hide();
+            if ($(window).width() < 830){$(".legend").hide()};
         });
         
         $(".legend-toggle").click(function(){
