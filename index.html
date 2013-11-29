@@ -69,8 +69,12 @@
     </header>
     
     <div class="maps">
-        <div id='world'></div>
-        <div id='treviso'></div>
+        <div id='world'>
+            <p class="world-caption">World</p>
+        </div>
+        <div id='treviso'>
+            <p class="treviso-caption">Treviso, Italy</p>
+        </div>
     </div>
     
     <script type='text/javascript'>
@@ -280,12 +284,15 @@
         }); 
         
         $(".studios-toggle").click(function(){
-            $(".studios").toggle()
+            $(".studios").toggle();
+            $(".legend").hide();
         });
         
         $(".legend-toggle").click(function(){
-            $(".legend").toggle()
+            $(".legend").toggle();
+            $(".studios").hide();
         });
+        
     </script>
     
 </body>
