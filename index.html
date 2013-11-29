@@ -8,27 +8,25 @@
     <meta name="viewport" content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
     <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+    <link rel="stylesheet" href="style.css"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
     <script src="jquery-ui-1.10.3.custom.min.js"></script>
-    <link href='style.min.css'/>
-    <link rel="stylesheet" href="stile.css"/>
-    
     <!--[if lte IE 8]>
     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css' rel='stylesheet' >
   <![endif]-->
-  
 </head>
+
 <body>
     
-    <div class="about">
+    <div class="about data">
         <h1 class="about-title">Nice to meet you</h1>
-        <p>This is a tool to better understand the Fabricanti network and discover more about them, it visualizes different data to show the structure of the people who's working there. You can toggle between a 'maps view' to look at where Fabricanti live and a 'stays view' showing who the oldest residents are.</p> <br/>
-         <a class="explore-button" href="#">Start exploring</a> <small class="author">&#10731; <a href="https://twitter.com/rzecchini" target="_blank">rzecchini</a> &#10731; <a href="http://urbancodes.tumblr.com/" target="_blank">Urban Codes</a> &#10731; <a href="http://www.fabrica.it/" target="_blank">fabrica.it</a> &#10731;</small>
+        <p>This is the representation of data I collected about people who work at Fabrica. In the visualization below each person is arranged according to its provenience and the more intense is the color, the more is the duration of his or her stay – you can focus on this data only, resizing your browser window. On the upper left you can switch to a map view with a comparison between where people come from and where they are living now. If you are a Fabricante you can still <a href="http://tiny.cc/hellofabrica" target="_blank">complete the form.</a></p>
+         <a class="explore-button" href="#">Start exploring</a> <small class="author">&#8900; <a href="https://twitter.com/rzecchini" target="_blank">rzecchini</a> &#8900; <a href="http://urbancodes.tumblr.com/" target="_blank">Urban Codes</a> &#8900; <a href="http://www.fabrica.it/" target="_blank">Fabrica</a> &#8900; </small>
     </div>
     
     <header class="menu">
 
-        <a class="switcher" href="#"><span class="maps">Switch to data</span><span class="switch-maps data">Switch to maps</span></a>
+        <a class="switcher" href="#"><span class="switch-maps data">Switch to Maps</span><span class="maps">Back to Stays</span></a>
         <script>
         $(".switcher").click(function(){
             $(".maps, .data").toggle();
@@ -63,7 +61,10 @@
         </div>
         
         <a class="about-toggle data" href="#"><span class="about-txt">What's this?</span><span class="about-txt-mobile">info</span></a>
-        <script>$(".about-toggle").click(function(){$(".about").toggle()});$(".explore-button").click(function(){$(".about").toggle()});</script>
+        <script>
+            $(".about-toggle").click(function(){$(".about").toggle()});
+            $(".explore-button,.switcher").click(function(){$(".about").hide()});
+        </script>
         
     </header>
     
@@ -205,7 +206,7 @@
     
     
 <div class="north data">
-    <span class="icon-north"></span>
+    <img src="north.png"/>
 </div>
 
 <div class="resize data">
@@ -214,7 +215,7 @@
 
     
     <script>
-        $(".data").css("display","none");
+        $(".maps").css("display","none");
         
         $(function() {
             if ($(window).width() > 830){
