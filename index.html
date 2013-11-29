@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Nice to meet you | Fabrica | Riccardo Zecchini</title>
+    <meta name="description" content="A tool to better understand the Fabricanti network">
+    <meta name="viewport" content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+    <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
+    <script src="jquery-ui-1.10.3.custom.min.js"></script>
+    <link href='style.min.css'/>
+    <link rel="stylesheet" href="stile.css"/>
+    
+    <!--[if lte IE 8]>
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css' rel='stylesheet' >
+  <![endif]-->
+  
+</head>
+<body>
+    
+    <div class="about">
+        <h1 class="about-title">Nice to meet you</h1>
+        <p>This is a tool to better understand the Fabricanti network and discover more about them, it visualizes different data to show the structure of the people who's working there. You can toggle between a 'maps view' to look at where Fabricanti live and a 'stays view' showing who the oldest residents are.</p> <br/>
+         <a class="explore-button" href="#">Start exploring</a> <small class="author">&#10731; <a href="https://twitter.com/rzecchini" target="_blank">rzecchini</a> &#10731; <a href="http://urbancodes.tumblr.com/" target="_blank">Urban Codes</a> &#10731; <a href="http://www.fabrica.it/" target="_blank">fabrica.it</a> &#10731;</small>
+    </div>
+    
+    <header class="menu">
+
+        <a class="switcher" href="#"><span class="maps">Switch to data</span><span class="switch-maps data">Switch to maps</span></a>
+        <script>
+        $(".switcher").click(function(){
+            $(".maps, .data").toggle();
+        });
+        </script>
+
+        
+        <div class="studios-container data">
+            <a href="#" class="studios-toggle">Studios</a>
+            <ul class="studios">
+                <li><a href="#" class="campaign-toggle">Campaign</a></li>
+                <li><a href="#" class="colors-toggle">Colors</a></li>
+                <li><a href="#" class="designdial-toggle">Design Dialogues</a></li>
+                <li><a href="#" class="docunarr-toggle">Documented Narratives</a></li>
+                <li><a href="#" class="livewind-toggle">Live Windows</a></li>
+                <li><a href="#" class="netpolitics-toggle">Networked Politics</a></li>
+                <li><a href="#" class="slowjour-toggle">Slow Journalism</a></li>
+                <li><a href="#" class="urbancodes-toggle">Urban Codes</a></li>
+            </ul>
+        </div>
+        
+        <div class="legend-container data">
+            <a href="#" class="legend-toggle">Stay</a>
+            <ul class="legend">
+                <li><span class="legend-color leg-moreT1"></span>> 1 months</li>
+                <li><span class="legend-color leg-moreT3"></span>> 3 months</li>
+                <li><span class="legend-color leg-moreT6"></span>> 6 months</li>
+                <li><span class="legend-color leg-moreT12"></span>> 12 months</li>
+                <li><span class="legend-color leg-moreT24"></span>> 24 months</li>
+                <li><span class="legend-color leg-moreT36"></span>> 36 months</li>
+            </ul>
+        </div>
+        
+        <a class="about-toggle data" href="#"><span class="about-txt">What's this?</span><span class="about-txt-mobile">info</span></a>
+        <script>$(".about-toggle").click(function(){$(".about").toggle()});$(".explore-button").click(function(){$(".about").toggle()});</script>
+        
+    </header>
+    
+    <div class="maps">
+        <div id='world'></div>
+        <div id='treviso'></div>
+    </div>
+    
+    <script type='text/javascript'>
+        
+        var map = L.mapbox.map('world', 'rzecchini.gbefdfg5', { 
+                zoomControl: false, minZoom: 2, maxZoom: 6})
+            .setView([22.535230, -13.886719], 2);  
+        new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+        
+        var map = L.mapbox.map('treviso', 'rzecchini.gbee5k0i', { 
+                zoomControl: false, minZoom: 13, maxZoom: 16})
+                .setView([45.666901, 12.243039], 14);
+        new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+        
+    </script>
+    
+    <div class="cards data">
+        
+        <div id="akshV" class="people urbancodes moreT6">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=akshataa+vishwanath&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Akshataa Vishwanath</a></span>
+            <span class="country">India</span>
+        </div>
+        <div id="akshM" class="people moreT1">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=akshay+mehta&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Akshay Mehta</a></span>
+            <span class="country">India</span>
+        </div>
+        <div id="alejS" class="people netpolitics moreT1">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=alejandro+sajgalik&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Alejandro Sajgalik</a></span>
+            <span class="country">France</span>
+        </div>
+        <div id="aliL" class="people netpolitics moreT3">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=alice+longo&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Alice Longo</a></span>
+            <span class="country">Italy</span>
+        </div>
+        <div id="angS" class="people urbancodes moreT24">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=angelo+semeraro&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Angelo Semeraro</a></span>
+            <span class="country">Italy</span>
+        </div>
+        <div id="caitM" class="people urbancodes moreT1">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=caitlin+morris&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Caitlin Morris</a></span>
+            <span class="country">USA</span>
+        </div>
+        <div id="catC" class="people designdial moreT36">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=catarina+ carreiras&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Catarina Carreiras</a></span>
+            <span class="country">Portugal</span>
+        </div>
+        <div id="colG" class="people docunarr moreT6">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=coleman+guyon&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Coleman Guyon</a></span>
+            <span class="country">USA</span>
+        </div>
+        <div id="davP" class="people urbancodes moreT24">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=david+penuela&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">David Penuela</a></span>
+            <span class="country">Spain</span>
+        </div>
+        <div id="dawG" class="people urbancodes moreT1">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=dawid+gorny&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Dawid Górny</a></span>
+            <span class="country">Poland</span>
+        </div>
+        <div id="fedF" class="people designdial moreT1">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=federico+floriani&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Federico Floriani</a></span>
+            <span class="country">Italy</span>
+        </div>
+        <div id="gastL" class="people livewind moreT12">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=gaston+lisak&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Gastón Lisak</a></span>
+            <span class="country">Spain</span>
+        </div>
+        <div id="gerV" class="people soundint moreT36">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=geremia+vinattieri&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Geremia Vinattieri</a></span>
+            <span class="country">Italy</span>
+        </div>
+        <div id="henH" class="people urbancodes moreT6">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=hendrik+ hohenstein&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Hendrik Hohenstein</a></span>
+            <span class="country">Germany</span>
+        </div>
+        <div id="jonC" class="people urbancodes moreT6">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=jonathan+chomko&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Jonathan Chomko</a></span>
+            <span class="country">Canada</span>
+        </div>
+        <div id="leoA" class="people urbancodes moreT6">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=leonardo+amico&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Leonardo Amico</a></span>
+            <span class="country">Italy</span>
+        </div>
+        <div id="lisC" class="people urbancodes moreT3">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=lisa+chung&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Lisa Chung</a></span>
+            <span class="country">USA</span>
+        </div>
+        <div id="marP" class="people slowjour moreT12">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=marco+pavan&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Marco Pavan</a></span>
+            <span class="country">Italy</span>
+        </div>
+        <div id="marZ" class="people designdial moreT12">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=marco+zanin&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Marco Zanin</a></span>
+            <span class="country">Italy</span>
+        </div>
+        <div id="marC" class="people designdial moreT36">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=marta+celso&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Marta Celso</a></span>
+            <span class="country">Italy</span>
+        </div>
+        <div id="mattR" class="people urbancodes moreT1">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=matthew+rosier&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Matthew Rosier</a></span>
+            <span class="country">England</span>
+        </div>
+        <div id="natT" class="people docunarr moreT1">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=natalie+thomson&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Natalie Thomson</a></span>
+            <span class="country">Scotland</span>
+        </div>
+        <div id="poKw" class="people designdial moreT1">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=Po+Kwan+Shek&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=vsSXUsLkDYed7gaGnoGIBA&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Po Kwan Shek</a></span>
+            <span class="country">Hong Kong</span>
+        </div>
+        <div id="redaJ" class="people colors moreT3">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=reda+ jouahri&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Reda Jouahri</a></span>
+            <span class="country">Netherlands</span>
+        </div>
+        <div id="reneM" class="people campaign moreT12">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=renee+melo&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Renée Melo</a></span>
+            <span class="country">Brazil</span>
+        </div>
+        <div id="samZ" class="people slowjour moreT12">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=sam+ziino&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Sam Ziino</a></span>
+            <span class="country">Australia</span>
+        </div>
+        <div id="tomPE" class="people docunarr moreT3">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=Tom%C3%A1s+Pichardo+Espaillat&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=Q8WXUsbNIuKs7Qas9YHACw&ved=0CAkQ_AUoAQ&biw=1390&bih=779">Tomás Pichardo Espaillat</a></span>
+            <span class="country">Dominican Republic</span>
+        </div>
+        <div id="vidN" class="people docunarr moreT3">
+            <span class="name"><a target="_blank" href="https://www.google.it/search?q=vidit+narang&espv=210&es_sm=119&source=lnms&tbm=isch&sa=X&ei=UsCXUsbvC8GGywP-uYLwBQ&ved=0CAkQ_AUoAQ&biw=1390&bih=779&dpr=1">Vidit Narang</a></span>
+            <span class="country">India</span>
+        </div>
+        
+    </div>
+    
+    
+<div class="north data">
+    <span class="icon-north"></span>
+</div>
+
+<div class="resize data">
+    <span class="resize-txt">resize your window to change view</span>
+</div>
+
+    
+    <script>
+        $(".data").css("display","none");
+        
+        $(function() {
+            if ($(window).width() > 830){
+                $(".people").draggable()
+            };
+        });
+        
+        $(".studios-toggle").hover(function(){
+            $(".people").css("display","block");             
+        });
+        
+       $(".colors-toggle").hover(function(){
+            $(".people").css("display","block"); 
+            $(".people").not(".colors")
+            .css("display","none");            
+        });
+        
+        $(".urbancodes-toggle").hover(function(){
+            $(".people").css("display","block"); 
+            $(".people").not(".urbancodes")
+            .css("display","none"); 
+        });
+        
+        $(".designdial-toggle").hover(function(){
+            $(".people").css("display","block"); 
+            $(".people").not(".designdial")
+            .css("display","none");               
+        });
+        
+        $(".docunarr-toggle").hover(function(){
+            $(".people").css("display","block"); 
+            $(".people").not(".docunarr")
+            .css("display","none"); 
+        });
+        
+        $(".slowjour-toggle").hover(function(){
+            $(".people").css("display","block"); 
+            $(".people").not(".slowjour")
+            .css("display","none"); 
+        });
+        
+        $(".campaign-toggle").hover(function(){
+            $(".people").css("display","block"); 
+            $(".people").not(".campaign")
+            .css("display","none"); 
+        });
+        
+        $(".netpolitics-toggle").hover(function(){
+            $(".people").css("display","block"); 
+            $(".people").not(".netpolitics")
+            .css("display","none"); 
+        });
+        
+        $(".livewind-toggle").hover(function(){
+            $(".people").css("display","block"); 
+            $(".people").not(".livewind")
+            .css("display","none"); 
+        });
+        
+        $(".livewind-toggle, .netpolitics-toggle, .docunarr-toggle, .slowjour-toggle, .campaign-toggle, .designdial-toggle, .urbancodes-toggle, .colors-toggle").click(function(){
+            $(".studios").css("display","none"); 
+        }); 
+        
+        $(".studios-toggle").click(function(){
+            $(".studios").toggle()
+        });
+        
+        $(".legend-toggle").click(function(){
+            $(".legend").toggle()
+        });
+    </script>
+    
+</body>
+
+</html>
