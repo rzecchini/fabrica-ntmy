@@ -5,7 +5,7 @@ This is the representation of data I collected about people who work at Fabrica.
 
 This is a first attempt to make a visualization of the Fabrica network and everyone who is interested in can contribute to develop this tool.
 
-[Demo](http://tiny.cc/nice-to-meet-you)
+[Demo](http://tiny.cc/thanksfabrica)
 
 ##For Fabricanti
 It is still possible to fill in the form and add your data: tiny.cc/hellofabrica
